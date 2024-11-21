@@ -5,7 +5,6 @@
 #ifndef CLASES_H
 #define CLASES_H
 
-
 #include <iostream>
 #include <string>
 #include <list>
@@ -31,7 +30,7 @@ private:
     std::string mensaje;
 public:
     MateriaNoInscrita(const std::string &materia)
-        : mensaje("No se puede registrar asistencia. La materia \"" + materia + "\" no está inscrita.") {}
+        : mensaje("No se puede registrar asistencia. La materia \"" + materia + "\" no esta inscrita.") {}
 
     const char* what() const noexcept override {
         return mensaje.c_str();
@@ -88,9 +87,9 @@ public:
 
     // Función para mostrar los datos del estudiante
     void mostrarEstudiante() {
-        std::cout << "El nombre del estudiante es: " << nombre << std::endl;
-        std::cout << "La edad del estudiante es: " << edad << " anos" << std::endl;
-        std::cout << "El promedio del estudiante es: " << promedio << std::endl;
+        std::cout << "El nombre del estudiante es: " <<nombre<< std::endl;
+        std::cout << "La edad del estudiante es: " <<edad<< std::endl;
+        std::cout << "El promedio del estudiante es: " <<promedio<< std::endl;
     }
 
     // Función para mostrar las materias
