@@ -73,7 +73,7 @@ int main()
             std::cout << identificacion << " no se encuentra en la base de datos de alumnos.\n Por favor, ingrese otro nombre." << std::endl;
         }
     }
-    catch (const std::exception &e) {
+    catch (const std::exception &e) { //Control de errores. No se puede ver la asistencia de una materia en la cual el alumno no esté matriculado.
         std::cerr << "Error: " << e.what() << std::endl;
     }
     return 0;
