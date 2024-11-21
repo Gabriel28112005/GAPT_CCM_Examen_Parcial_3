@@ -7,4 +7,5 @@ set(CMAKE_C_STANDARD 11)
 include_directories(.)
 
 add_executable(Examen-parcial3-C
-        main.c)
+        main.c
+        main2.c)
