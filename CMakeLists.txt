@@ -1,11 +1,7 @@
 cmake_minimum_required(VERSION 3.29)
 
-project(Coleccion-programacion-estructurada-CCM)
+project(GAPT_CCM_Examen_Parcial3)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 
-include_directories(.)
 
-add_executable(Examen-parcial3-C
-        main.c
-        main2.c)
