@@ -189,4 +189,9 @@ Con base en tu experiencia y las implementaciones desarrolladas:
 ¿Cuál de los dos lenguajes consideras más adecuado para el proyecto del CGEA?
 ¿Qué recomendaciones harías al equipo de desarrollo del CGEA para la siguiente fase del proyecto?
 
+-Para este proyecto recomendamos C. Este proyecto no requiere de un código tan complejo como el de c++, por tanto, c es el indicado ya que podemos llegar al mismo resultado que con c++ pero menos trabajo. Les recomiendo que programen en c++, porque para esta fase como es fácil es recomendable c, pero si queremos manejar varias estructuras sería recomendable c++.
+
+
+
+
 
