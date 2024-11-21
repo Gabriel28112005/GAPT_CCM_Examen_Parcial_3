@@ -11,7 +11,7 @@
 #include <algorithm> // Para std::find
 #include <exception> // Para std::exception
 
-// Excepción personalizada para materia no encontrada
+// Excepción personalizada para materia no encontrada (Hecha por ChatGPT)
 class MateriaNoEncontrada : public std::exception {
 private:
     std::string mensaje;
@@ -24,7 +24,7 @@ public:
     }
 };
 
-// Excepción personalizada para asistencia a materia no inscrita
+// Excepción personalizada para asistencia a materia no inscrita (Hecha por ChatGPT)
 class MateriaNoInscrita : public std::exception {
 private:
     std::string mensaje;
@@ -44,12 +44,12 @@ private:
     std::list<char> materia; // Cambiado a lista de caracteres
     std::string estado;      // Asistió, Falta, Tardanza
 
-    // Función auxiliar para convertir std::string a std::list<char>
+    // Función para convertir std::string a std::list<char>
     std::list<char> stringToList(const std::string &str) {
         return std::list<char>(str.begin(), str.end());
     }
 
-    // Función auxiliar para convertir std::list<char> a std::string (para mostrar)
+    // Función para convertir std::list<char> a std::string (para mostrar)
     std::string listToString(const std::list<char> &charList) const {
         return std::string(charList.begin(), charList.end());
     }
@@ -92,9 +92,9 @@ public:
         std::cout << "El promedio del estudiante es: " <<promedio<< std::endl;
     }
 
-    // Función para mostrar las materias
+    // Función para mostrar las materias (Hecho con ChatGPT)
     void mostrarMaterias() {
-        if (materias.empty()) {
+        if (materias.empty()) { //condición de que ejecute el siguiente código en caso de que no hayan materias.
             std::cout << "El estudiante no está inscrito en ninguna materia." << std::endl;
             return;
         }
@@ -106,13 +106,13 @@ public:
         }
     }
 
-    // Función para agregar una materia
+    // Función para agregar una materia (Hecho con ChatGPT)
     void agregarMateria(const std::string &materia) {
         materias.push_back(materia);
         std::cout << "La materia \"" << materia << "\" ha sido agregada correctamente." << std::endl;
     }
 
-    // Función para eliminar una materia por nombre
+    // Función para eliminar una materia por nombre (Hecho con ChatGPT)
     void eliminarMateria(const std::string &materia) {
         auto it = std::find(materias.begin(), materias.end(), materia);
         if (it == materias.end()) {
@@ -122,7 +122,7 @@ public:
         std::cout << "La materia \"" << materia << "\" ha sido eliminada correctamente." << std::endl;
     }
 
-    // Función para registrar asistencia
+    // Función para registrar asistencia (Hecho con ChatGPT)
     void registrarAsistencia(const std::string &fecha, const std::string &materia, const std::string &estado) {
         auto it = std::find(materias.begin(), materias.end(), materia);
         if (it == materias.end()) {
