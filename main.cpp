@@ -6,7 +6,7 @@
 int main() {
     try {
         // Crear un estudiante
-        Estudiante estudiante1("Juan Perez", 20, 8.75);
+        Estudiante estudiante1("Gabriel", 20, 8.75);
 
         // Mostrar datos del estudiante
         estudiante1.mostrarEstudiante();
