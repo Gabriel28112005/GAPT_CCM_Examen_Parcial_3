@@ -9,3 +9,7 @@ add_executable(Trabajo_cpp
 main.cpp)
 
 
+add_executable(Trabajo_c
+        main2.c)
+add_executable(Trabajo_cpp
+        main.cpp)

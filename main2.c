@@ -90,35 +90,61 @@ void liberarAsistencias(struct Estudiante* est) {
     free(est->asistencias);
 }
 
+char nombreEst[50];
+
 int main()
 {
-    struct Estudiante estudiante = {"Carlos", 18, 8.5, NULL, 0};
+     // Pedir el nombre del estudiante
+    printf("Ingresa el nombre del estudiante: ");
+    fgets(nombreEst, sizeof(nombreEst), stdin);
+    nombreEst[strcspn(nombreEst, "\n")] = '\0';  // Eliminar salto de línea
 
-    // Agregar materias
+    // Verificar si el estudiante es Gabriel o Carlos
+    if (strcmp(nombreEst, "Gabriel") == 0) {
+        struct Estudiante estudianteGabriel = {"Gabriel", 19, 9.2, NULL, 0};
 
-    agregarMateria(&estudiante, 0, "Matematicas,");
-    agregarMateria(&estudiante, 1, "Fisica,");
-    agregarMateria(&estudiante, 2, "Programacion.");
+        // Agregar materias
+        agregarMateria(&estudianteGabriel, 0, "Matematicas");
+        agregarMateria(&estudianteGabriel, 1, "Fisica");
+        agregarMateria(&estudianteGabriel, 2, "Programacion");
 
-    // Mostrar datos del estudiante
+        // Mostrar los datos del estudiante
+        mostrarEstudiante(estudianteGabriel);
 
-    mostrarEstudiante(estudiante);
+        // Registrar asistencias
+        registrarAsistencia(&estudianteGabriel, "12/10/2024", "Matematicas", ASISTIO);
+        registrarAsistencia(&estudianteGabriel, "13/10/2024", "Fisica", FALTA);
 
-    // Registramos algunas asistencias
+        // Mostrar las asistencias de Gabriel
+        mostrarAsistencias(estudianteGabriel);
 
-    registrarAsistencia(&estudiante, "12/10/2024", "Matematicas", ASISTIO);
-    registrarAsistencia(&estudiante, "13/10/2024", "Fisica", FALTA);
-    registrarAsistencia(&estudiante, "14/10/2024", "Programacion", TARDANZA);
+        // Liberar memoria
+        liberarAsistencias(&estudianteGabriel);
+    }
+    else if (strcmp(nombreEst, "Carlos") == 0) {
+        struct Estudiante estudianteCarlos = {"Carlos", 18, 8.5, NULL, 0};
 
-    // Mostramos las asistencias del estudiante
+        // Agregar materias
+        agregarMateria(&estudianteCarlos, 0, "Matematicas");
+        agregarMateria(&estudianteCarlos, 1, "Fisica");
+        agregarMateria(&estudianteCarlos, 2, "Programacion");
 
-    mostrarAsistencias(estudiante);
+        // Mostrar los datos del estudiante
+        mostrarEstudiante(estudianteCarlos);
 
-    // Liberamos la memoria utilizada para las asistencias
+        // Registrar algunas asistencias
+        registrarAsistencia(&estudianteCarlos, "12/10/2024", "Matematicas", ASISTIO);
+        registrarAsistencia(&estudianteCarlos, "13/10/2024", "Fisica", FALTA);
+        registrarAsistencia(&estudianteCarlos, "14/10/2024", "Programacion", TARDANZA);
 
-    liberarAsistencias(&estudiante);
+        // Mostrar las asistencias de Carlos
+        mostrarAsistencias(estudianteCarlos);
 
-
-
+        // Liberar memoria
+        liberarAsistencias(&estudianteCarlos);
+    } else {
+        // Si el nombre no es ni Gabriel ni Carlos
+        printf("El estudiante ingresado no se encuentra matriculado\n");
+    }
     return 0;
 }
