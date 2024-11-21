@@ -6,12 +6,12 @@ std::string identificacion;
 
 int main()
 {
-    std::cout << "Ingrese el nombre del estudiante: "; std::cin>>identificacion;
+    std::cout << "Ingrese el nombre del estudiante: "; std::cin>>identificacion;   // La máquina le pide al usuario que ingrese el nombre que desea buscar
 
     try {
-        if (identificacion == "Gabriel") {
+        if (identificacion == "Gabriel") { //En caso de que el nombre ingresado sea "Gabriel", el programa muestra su nombre, edad, promedio, materias matriculadas y las asistencias a las mismas
             // Crear un estudiante
-            Estudiante estudiante1("Gabriel", 19, 9.2);
+            Estudiante estudiante1("Gabriel", 19, 9.2); 
 
             // Mostrar datos del estudiante
             estudiante1.mostrarEstudiante();
@@ -39,7 +39,7 @@ int main()
             estudiante1.registrarAsistencia("2024-11-22", "Fisica", "Asistio");
 
         }
-        else if (identificacion == "Carlos") {
+        else if (identificacion == "Carlos") { //En caso de que el nombre ingresado sea "Carlos", el programa muestra su nombre, edad, promedio, materias matriculadas y las asistencias a las mismas
             // Crear un estudiante
             Estudiante estudiante2("Carlos", 18, 8.5);
 
@@ -69,7 +69,7 @@ int main()
             estudiante2.registrarAsistencia("2024-11-22", "Fisica", "Asistio");
 
         }
-        else {
+        else { //En caso de que el alumno que buscamos no sea ni "Gabriel" ni "Carlos", el programa nos imprimirá que el nombre ingresado no se encuentra en la base de datos de los alumnos.
             std::cout << identificacion << " no se encuentra en la base de datos de alumnos.\n Por favor, ingrese otro nombre." << std::endl;
         }
     }
